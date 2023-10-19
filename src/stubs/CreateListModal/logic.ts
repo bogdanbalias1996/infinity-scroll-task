@@ -19,10 +19,7 @@ export const listCreateRequestLogic = createLogic({
 
     try {
       const newList = await httpClient
-        .post(
-          `https://api.themoviedb.org/3/list?session_id=${SESSION_ID}&api_key=${API_KEY}`,
-          data,
-        )
+        .post(`list?session_id=${SESSION_ID}&api_key=${API_KEY}`, data)
         .then(resp => resp.data);
 
       dispatch(listCreateFulfilled(newList));

@@ -4,24 +4,13 @@ import {
   legacy_createStore as createStore,
 } from 'redux';
 import {createLogicMiddleware} from 'redux-logic';
-import axios from 'axios';
 
+import {api} from '../api';
 import logic from '../rootLogic';
 import rootReducer from '../rootReducer';
-import {Alert} from 'react-native';
-
-axios.interceptors.response.use(
-  response => {
-    return response;
-  },
-  error => {
-    Alert.alert('Oops, something went wrong, try again');
-    return Promise.reject(error);
-  },
-);
 
 const deps = {
-  httpClient: axios,
+  httpClient: api,
 };
 
 const composeEnhancers =

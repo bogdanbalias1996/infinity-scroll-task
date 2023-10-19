@@ -17,7 +17,7 @@ export const listFetchRequestLogic = createLogic({
     try {
       const list = await httpClient
         .get(
-          `https://api.themoviedb.org/3/account/8487708/lists?page=${page}&session_id=${SESSION_ID}&api_key=${API_KEY}`,
+          `account/8487708/lists?page=${page}&session_id=${SESSION_ID}&api_key=${API_KEY}`,
         )
         .then(resp => resp.data.results);
 
