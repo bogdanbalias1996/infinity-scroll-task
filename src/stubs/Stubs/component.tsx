@@ -9,7 +9,11 @@ type StubsProps = {
 
 const Stubs = ({navigation}: StubsProps) => (
   <View>
-    <Button title="Lists" onPress={() => navigation.push('Lists')} />
+    <Button
+      title="Lists"
+      testID="ListsBtn"
+      onPress={() => navigation.push('Lists')}
+    />
   </View>
 );
 

@@ -42,6 +42,7 @@ const CreateListModal = () => {
       <TextInput
         mode="outlined"
         label="Name"
+        testID="NameInput"
         error={Boolean(formik.errors.name)}
         value={formik.values.name}
         onChangeText={(value: string) => {
@@ -49,12 +50,16 @@ const CreateListModal = () => {
           formik.setFieldError('name', '');
         }}
       />
-      <HelperText type="error" visible={Boolean(formik.errors.name)}>
+      <HelperText
+        testID="NameError"
+        type="error"
+        visible={Boolean(formik.errors.name)}>
         {formik.errors.name}
       </HelperText>
       <TextInput
         mode="outlined"
         label="Description"
+        testID="DescriptionInput"
         error={Boolean(formik.errors.description)}
         value={formik.values.description}
         onChangeText={(value: string) => {
@@ -67,6 +72,7 @@ const CreateListModal = () => {
       </HelperText>
       <Button
         onPress={formik.handleSubmit}
+        testID="SubmitButton"
         mode="contained"
         loading={listCreating}>
         Create

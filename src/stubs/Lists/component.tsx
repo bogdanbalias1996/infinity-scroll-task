@@ -77,6 +77,7 @@ const Lists = () => {
         onRefresh={() => getList(1)}
         refreshing={listFetching}
         onEndReached={fetchMoreData}
+        testID="Flatlist"
       />
     </>
   );

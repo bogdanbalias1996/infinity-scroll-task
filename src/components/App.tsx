@@ -23,7 +23,11 @@ const RootStack = () => (
       name="Home"
       options={({navigation}) => ({
         headerRight: () => (
-          <Button onPress={() => navigation.push('Stubs')} title="Stubs" />
+          <Button
+            onPress={() => navigation.push('Stubs')}
+            title="Stubs"
+            testID="StubsBtn"
+          />
         ),
       })}>
       {() => <View />}
@@ -38,6 +42,7 @@ const RootStack = () => (
           <Button
             onPress={() => navigation.push('CreateListModal')}
             title="Add"
+            testID="AddBtn"
           />
         ),
       })}
