@@ -4,11 +4,10 @@
 
 import 'react-native';
 import React from 'react';
-import App from '../src/components/App';
-
 import renderer from 'react-test-renderer';
-jest.mock('react-native-gesture-handler', () => {});
+import CreateListModal from '../src/stubs/CreateListModal';
 
-it('renders correctly', () => {
-  renderer.create(<App />);
+test('renders correctly', () => {
+  const tree = renderer.create(<CreateListModal />).toJSON();
+  expect(tree).toMatchSnapshot();
 });
