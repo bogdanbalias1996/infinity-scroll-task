@@ -16,7 +16,6 @@ import {RootStackParamList} from './types';
 
 const Stack = createStackNavigator<RootStackParamList>();
 
-//TODO: interviewee fix warning
 const RootStack = () => (
   <Stack.Navigator>
     <Stack.Screen
